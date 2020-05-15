@@ -22,8 +22,7 @@ namespace Project_MVC.Controllers
         {
             return View(await _context.Departamentos.OrderBy(c => c.Nome).ToListAsync());
         }
-
-        // GET: Departamento/Create
+ 
         public IActionResult Create()
         {
             return View();
@@ -48,7 +47,6 @@ namespace Project_MVC.Controllers
             return View(departamento);
         }
 
-        // GET: Departamento/Edit/5
         public async Task<IActionResult> Edit(long? id)
         {
             if (id == null)
@@ -114,7 +112,6 @@ namespace Project_MVC.Controllers
             return View(departamento);
         }
 
-        // GET: Departamento/Delete/5
         public async Task<IActionResult> Delete(long? id)
         {
             if (id == null)
