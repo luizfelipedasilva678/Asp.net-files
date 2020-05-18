@@ -11,11 +11,17 @@ namespace Project_MVC.Data
         public static void Initialize(IESContext context)
         {
             context.Database.EnsureCreated();
-            if (context.Departamentos.Any())
+            if (context.Departamentos.Any() && context.Instituicoes.Any())
             {
                 return;
             }
 
+            var instituicoes = new Instituicao[]
+            {
+                new Instituicao { Nome = "Ufrj" , Endereco ="Cruz Vermelha"},
+                new Instituicao { Nome = "Uff" , Endereco ="Cruz Azul"}
+            };
+            
             var departamentos = new Departamento[]
             {
                 new Departamento { Nome="Ciência da Computação"},
@@ -25,6 +31,12 @@ namespace Project_MVC.Data
             foreach (Departamento d in departamentos)
             {
                 context.Departamentos.Add(d);
+            }
+            context.SaveChanges();
+
+            foreach(Instituicao i in instituicoes)
+            {
+                context.Instituicoes.Add(i);
             }
             context.SaveChanges();
         }
