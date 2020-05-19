@@ -19,6 +19,22 @@ namespace Project_MVC.Data
             var instituicoes = new Instituicao[]
             {
                 new Instituicao { Nome = "Ufrj" , Endereco ="Cruz Vermelha"},
+                new Instituicao { Nome = "Uff" , Endereco ="Cruz Azul"},
+                new Instituicao { Nome = "Ufrj" , Endereco ="Cruz Vermelha"},
+                new Instituicao { Nome = "Uff" , Endereco ="Cruz Azul"},
+                new Instituicao { Nome = "Ufrj" , Endereco ="Cruz Vermelha"},
+                new Instituicao { Nome = "Uff" , Endereco ="Cruz Azul"},
+                new Instituicao { Nome = "Ufrj" , Endereco ="Cruz Vermelha"},
+                new Instituicao { Nome = "Uff" , Endereco ="Cruz Azul"},
+                new Instituicao { Nome = "Ufrj" , Endereco ="Cruz Vermelha"},
+                new Instituicao { Nome = "Uff" , Endereco ="Cruz Azul"},
+                new Instituicao { Nome = "Ufrj" , Endereco ="Cruz Vermelha"},
+                new Instituicao { Nome = "Uff" , Endereco ="Cruz Azul"},
+                new Instituicao { Nome = "Ufrj" , Endereco ="Cruz Vermelha"},
+                new Instituicao { Nome = "Ufrj" , Endereco ="Cruz Vermelha"},
+                new Instituicao { Nome = "Ufrj" , Endereco ="Cruz Vermelha"},
+                new Instituicao { Nome = "Uff" , Endereco ="Cruz Azul"},
+                new Instituicao { Nome = "Uff" , Endereco ="Cruz Azul"},
                 new Instituicao { Nome = "Uff" , Endereco ="Cruz Azul"}
             };
             
