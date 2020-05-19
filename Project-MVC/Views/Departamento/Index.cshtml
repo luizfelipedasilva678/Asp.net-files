@@ -4,32 +4,57 @@
     ViewData["Title"] = "Index";
 }
 
+@section styles {
+    <link rel="stylesheet" href="~/css/style.css" />
+    <link rel="stylesheet" href="~/lib/datatables/css/jquery.dataTables.min.css" />
+}
+
 <h1>Index</h1>
 
 <p>
-    <a asp-action="Create">Create New</a>
+    <button class="btn-primary"> <a asp-action="Create">Create New</a> </button>
 </p>
-<table class="table">
+<table id="table_departamento" class="table">
     <thead>
         <tr>
             <th>
                 @Html.DisplayNameFor(model => model.Nome)
             </th>
-            <th></th>
+            <th>
+                @Html.DisplayNameFor(model => model.Instituicao.Nome)
+            <th>
+                Ações
+            </th>
         </tr>
     </thead>
     <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nome)
-            </td>
-            <td>
-                <a asp-action="Edit" asp-route-id="@item.DepartamentoID">Edit</a> |
-                <a asp-action="Details" asp-route-id="@item.DepartamentoID">Details</a> |
-                <a asp-action="Delete" asp-route-id="@item.DepartamentoID">Delete</a>
-            </td>
-        </tr>
-}
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Instituicao.Nome)
+                </td>
+                <td>
+                    <button class="btn-primary"><a asp-action="Edit" asp-route-id="@item.DepartamentoID">Edit</a></button> |
+                    <button class="btn-info"><a asp-action="Details" asp-route-id="@item.DepartamentoID">Details</a></button> |
+                    <button class="btn-danger"><a asp-action="Delete" asp-route-id="@item.DepartamentoID">Delete</a></button>
+                </td>
+            </tr>
+        }
     </tbody>
 </table>
+
+
+@section ScriptPage{
+    <script src="~/lib/datatables/js/dataTables.dataTables.min.js"></script>
+    <script src="~/lib/datatables/js/jquery.dataTables.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#table_departamento').DataTable();
+        });
+    </script>
+}
