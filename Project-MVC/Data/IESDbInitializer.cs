@@ -1,4 +1,5 @@
-﻿using Project_MVC.Models;
+﻿using Modelo.Cadastros;
+using Project_MVC.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
