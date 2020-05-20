@@ -24,6 +24,7 @@ namespace Project_MVC
                 {
                     var context = services.GetRequiredService<IESContext>();
                     IESDbInitializer.Initialize(context);
+
                 }catch(Exception ex)
                 {
                     var logger = services.GetRequiredService<ILogger<Program>>();
