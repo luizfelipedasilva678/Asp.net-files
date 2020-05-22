@@ -2,15 +2,17 @@
 using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Project_MVC.Data;
 
 namespace Project_MVC.Migrations
 {
     [DbContext(typeof(IESContext))]
-    partial class IESContextModelSnapshot : ModelSnapshot
+    [Migration("20200522204521_CursoDisciplina")]
+    partial class CursoDisciplina
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -99,30 +101,6 @@ namespace Project_MVC.Migrations
                     b.HasKey("InstituicaoID");
 
                     b.ToTable("Instituicoes");
-                });
-
-            modelBuilder.Entity("Modelo.Discente.Academico", b =>
-                {
-                    b.Property<long?>("AcademicoID")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("bigint");
-
-                    b.Property<DateTime?>("Nascimento")
-                        .IsRequired()
-                        .HasColumnType("datetime(6)");
-
-                    b.Property<string>("Nome")
-                        .IsRequired()
-                        .HasColumnType("longtext CHARACTER SET utf8mb4");
-
-                    b.Property<string>("RegistroAcademico")
-                        .IsRequired()
-                        .HasColumnType("varchar(10) CHARACTER SET utf8mb4")
-                        .HasMaxLength(10);
-
-                    b.HasKey("AcademicoID");
-
-                    b.ToTable("Academicos");
                 });
 
             modelBuilder.Entity("Modelo.Cadastros.Curso", b =>
