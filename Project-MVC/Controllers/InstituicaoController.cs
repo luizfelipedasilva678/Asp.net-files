@@ -1,5 +1,6 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Modelo.Cadastros;
@@ -8,6 +9,7 @@ using Project_MVC.Data.DAL.Cadastros;
 
 namespace Project_MVC.Controllers
 {
+    [Authorize]
     public class InstituicaoController : Controller
     {
         private readonly IESContext _context;

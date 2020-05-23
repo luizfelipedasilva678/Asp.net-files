@@ -10,6 +10,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Project_MVC.Data;
 using Microsoft.EntityFrameworkCore;
+using Project_MVC.Models.Infra;
+using Microsoft.AspNetCore.Identity;
 
 namespace Project_MVC
 {
@@ -31,6 +33,15 @@ namespace Project_MVC
             services.AddAuthorization();
             services.AddControllers();
             services.AddMvc();
+
+            services.AddIdentity<UsuarioDaAplicacao, IdentityRole>()
+                .AddEntityFrameworkStores<IESContext>()
+                .AddDefaultTokenProviders();
+            services.ConfigureApplicationCookie(options =>
+            {
+                options.LoginPath = "/Infra/Acessar";
+                options.AccessDeniedPath = "/Infra/AcessoNegado";
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,7 +59,7 @@ namespace Project_MVC
             }
             app.UseHttpsRedirection();
             app.UseStaticFiles();
-
+            app.UseAuthentication();
             app.UseRouting();
 
             app.UseAuthorization();

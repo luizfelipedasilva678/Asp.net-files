@@ -7,6 +7,7 @@ namespace Project_MVC.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+           
             migrationBuilder.CreateTable(
                 name: "Instituicoes",
                 columns: table => new
@@ -45,15 +46,18 @@ namespace Project_MVC.Migrations
                 name: "IX_Departamentos_InstituicaoID",
                 table: "Departamentos",
                 column: "InstituicaoID");
+                
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+          
             migrationBuilder.DropTable(
                 name: "Departamentos");
 
             migrationBuilder.DropTable(
                 name: "Instituicoes");
+            
         }
     }
 }

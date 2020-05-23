@@ -2,10 +2,13 @@
 using Modelo.Cadastros;
 using Modelo.Discente;
 using Project_MVC.Models;
+using Project_MVC.Models.Infra;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+
 
 namespace Project_MVC.Data
 {
-    public class IESContext : DbContext
+    public class IESContext : IdentityDbContext<UsuarioDaAplicacao>
     {
         public IESContext(DbContextOptions<IESContext> options) : base(options)
         {

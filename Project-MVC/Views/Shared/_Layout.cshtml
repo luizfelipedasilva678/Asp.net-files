@@ -28,7 +28,30 @@
                         <li class="nav-item">
                             <a class="nav-link text-dark" asp-area="" asp-controller="Instituicao" asp-action="Index">Index Instituicao</a>
                         </li>
-                    </ul>
+                    </ul>]
+                    <div class="row" style="text-align:right;">
+                        <div class="col-6"></div>
+                        <div class="col-6">
+                            @if (SignInManager.IsSignedIn(User))
+                            {
+                                <div>
+                                    Olá @UserManager.GetUserName(User), seja bem-vin
+                                    do(a) / @Html.ActionLink("Logout", "Sair", "Infra", new
+                            {
+                                area =
+                    ""
+                            })
+                                </div>
+                            }
+                            else
+                            {
+                                <a class="nav-item nav-link" asp-area="" asp-controll
+                                   er="Infra" asp-action="Acessar">
+                                    Informar usuário/senha para acessar
+                                </a>
+                            }
+                        </div>
+                    </div>
                 </div>
             </div>
         </nav>

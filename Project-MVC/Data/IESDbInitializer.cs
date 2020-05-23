@@ -11,9 +11,8 @@ namespace Project_MVC.Data
     {
         public static void Initialize(IESContext context)
         {
-            context.Database.EnsureDeleted();
             context.Database.EnsureCreated();
-            if (context.Departamentos.Any())
+            if (context.Departamentos.Any() && context.Instituicoes.Any())
             {
                 return;
             }

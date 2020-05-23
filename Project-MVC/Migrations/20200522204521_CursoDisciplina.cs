@@ -7,6 +7,7 @@ namespace Project_MVC.Migrations
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
+            
             migrationBuilder.CreateTable(
                 name: "Cursos",
                 columns: table => new
@@ -73,10 +74,12 @@ namespace Project_MVC.Migrations
                 name: "IX_Cursos_DepartamentoID",
                 table: "Cursos",
                 column: "DepartamentoID");
+                
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            
             migrationBuilder.DropTable(
                 name: "CursoDisciplina");
 
@@ -85,6 +88,7 @@ namespace Project_MVC.Migrations
 
             migrationBuilder.DropTable(
                 name: "Disciplinas");
+            
         }
     }
 }
